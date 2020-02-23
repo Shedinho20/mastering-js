@@ -11,7 +11,21 @@
  * @param {number[]} A
  */
 function solution(A) {
+  result = [];
   // todo: implement function here
+  A.forEach(function(item, index, array){
+    if (item%2 == 0){
+      item=item/2;
+      if(item%2 == 0){
+        item=item/2
+        if(item%2 == 0){
+          result.push(index);
+        }
+      }
+    }
+
+  })
+  return result
 }
 
 function main() {
@@ -24,3 +38,9 @@ function main() {
 }
 
 main();
+
+/** 
+var B = [1,2,2,2,8,8,8,8,8,8,];
+var D = solution(B);
+console.log(D)
+*/
