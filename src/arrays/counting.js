@@ -13,26 +13,28 @@
 function solution(A) {
   result = [];
   // todo: implement function here
-  A.forEach(function(item, index, array){
-    if (item%2 == 0){
-      item=item/2;
-      if(item%2 == 0){
-        item=item/2
-        if(item%2 == 0){
+  A.forEach(function(item, index, array) {
+    if (item % 2 == 0) {
+      item = item / 2;
+      if (item % 2 == 0) {
+        item = item / 2;
+        if (item % 2 == 0) {
           result.push(index);
         }
       }
     }
-
-  })
-  return result
+  });
+  return result;
 }
 
 function main() {
   const A = new Array(125).fill(0).map((_, i) => i + 1);
 
   const y = solution(A);
-  if (y.join() !== [15, 31, 47, 63, 79, 95, 111].join())
+  if (
+    y.join() !==
+    [7, 15, 23, 31, 39, 47, 55, 63, 71, 79, 87, 95, 103, 111, 119].join()
+  )
     console.error("Wrong Answer: Please implement a correct solution");
   else console.log("Correct, Welldone");
 }
