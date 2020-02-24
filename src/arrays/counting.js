@@ -11,10 +11,10 @@
  * @param {number[]} A
  */
 function solution(A) {
-  result = [];
+  const result = [];
   // todo: implement function here
   A.forEach(function(item, index, array) {
-    count = 0;
+    let count = 0;
     while(item%2 == 0){
       count++
       item=item/2;
