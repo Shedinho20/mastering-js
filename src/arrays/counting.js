@@ -14,18 +14,19 @@ function solution(A) {
   result = [];
   // todo: implement function here
   A.forEach(function(item, index, array) {
-    if (item % 2 == 0) {
-      item = item / 2;
-      if (item % 2 == 0) {
-        item = item / 2;
-        if (item % 2 == 0) {
-          result.push(index);
-        }
+    count = 0;
+    while(item%2 == 0){
+      count++
+      item=item/2;
+      if (count >= 3){
+        result.push(index);
+        break
       }
     }
   });
   return result;
 }
+
 
 function main() {
   const A = new Array(125).fill(0).map((_, i) => i + 1);
@@ -42,7 +43,7 @@ function main() {
 main();
 
 /** 
-var B = [1,2,2,2,8,8,8,8,8,8,];
+var B = [8,6,8,16,1,1,1,1,8,16,2,2,2,2,2,2,2,2,2,2];
 var D = solution(B);
 console.log(D)
 */
