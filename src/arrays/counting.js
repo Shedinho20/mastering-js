@@ -38,7 +38,27 @@ function solution1(A) {
  */
 function solution2(A) {
   // todo: implement function here
-  return 0;
+
+  const arry = A.sort((a,b) => (a-b));
+  let compare = [];
+  for (let i = arry[0]; i <= (arry[arry.length-1]); i++){
+    compare.push(i);
+  }
+  arry.forEach(function(array,index){
+    for (let j = 0; j < compare.length;j++){
+      if (array == compare[j]){
+        compare.splice(j,1);
+      }
+      
+    }
+  })
+  
+  if (compare.length != 0){
+    return (Math.min.apply(null,compare));
+  } else{
+    return ((arry[arry.length-1])+1);
+  }
+
 }
 
 function main() {
@@ -55,7 +75,6 @@ function main() {
   else console.log("Solution1 Correct, Welldone");
 
   const A2 = [2, -1, 0, 1, 4, 3];
-
   const y2 = solution2(A2);
   if (y2 !== 5)
     console.error(
@@ -66,8 +85,12 @@ function main() {
 
 main();
 
+
+
 /** 
 var B = [8,6,8,16,1,1,1,1,8,16,2,2,2,2,2,2,2,2,2,2];
 var D = solution(B);
 console.log(D)
+console.log(solution2([1,4,2,5,9,10]));
 */
+
