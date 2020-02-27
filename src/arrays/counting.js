@@ -38,14 +38,14 @@ function solution1(A) {
  */
 function solution2(A) {
   // todo: implement function here
-  const arry = A.sort((a,b) => (a-b));
+  const arry = A.sort((a, b) => a - b);
   let i;
-  for ( i = 0; i<(arry.length)-1;i++);
-    if ((arry[i]+1) !== (arry[i+1])){
-      console.log(arry[i]+1)
-      return arry[i]+1
+  for (i = 0; i < arry.length - 1; i++) {
+    if (arry[i] + 1 !== arry[i + 1]) {
+      console.log(arry[i] + 1);
+      return arry[i] + 1;
     }
-  
+  }
 }
 
 function main() {
@@ -61,10 +61,10 @@ function main() {
     );
   else console.log("Solution1 Correct, Welldone");
 
-  const A2 = [2, -1, 0, 1, 4, 3];
+  const A2 = [2, -1, 0, 1, 5, 3];
 
   const y2 = solution2(A2);
-  if (y2 !== 5)
+  if (y2 !== 4)
     console.error(
       "Solution2 Wrong Answer: Please implement a correct solution"
     );
