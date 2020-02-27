@@ -5,7 +5,13 @@
  */
 function solution1(N) {
   //todo: implement solution here
-  return 0;
+  
+  const N_new = (N.toString()).split("");
+  Arry=[];
+  for(let i = N_new.length-1; i >= 0; i--){
+    Arry.push(N_new[i]);
+  }
+  return parseInt((Arry.join('')));
 }
 
 function main() {
@@ -16,3 +22,4 @@ function main() {
     console.error("Wrong Answer: Please implement a correct solution");
   else console.log("Correct, Welldone");
 }
+main();
