@@ -39,22 +39,13 @@ function solution1(A) {
 function solution2(A) {
   // todo: implement function here
   const arry = A.sort((a,b) => (a-b));
-  let compare = [];
-  for (let i = arry[0]; i <= (arry[arry.length-1]); i++){
-    compare.push(i);
-  }
-  arry.forEach((array,index) => {
-    for (let j = 0; j < compare.length;j++){
-      if (array == compare[j]){
-        compare.splice(j,1);
-      }
+  let i;
+  for ( i = 0; i<(arry.length)-1;i++);
+    if ((arry[i]+1) !== (arry[i+1])){
+      console.log(arry[i]+1)
+      return arry[i]+1
     }
-  })
-  if (compare.length != 0){
-    return (Math.min.apply(null,compare));
-  } else{
-    return ((arry[arry.length-1])+1);
-  }
+  
 }
 
 function main() {
