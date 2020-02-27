@@ -7,7 +7,7 @@ function solution1(N) {
   //todo: implement solution here
   
   const N_new = (N.toString()).split("");
-  Arry=[];
+  let Arry=[];
   for(let i = N_new.length-1; i >= 0; i--){
     Arry.push(N_new[i]);
   }
