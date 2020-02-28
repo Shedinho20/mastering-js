@@ -5,7 +5,12 @@
  */
 function solution1(A) {
   // todo: implement solution here
-  return [0, 0];
+  A = A.sort((a, b) => a - b);
+  let A_new = [];
+  A.forEach(function(item) {
+    if (item != A_new[A_new.length - 1]) A_new.push(item);
+  });
+  return [A_new[2], A_new[A_new.length - 2]];
 }
 
 function main() {
