@@ -43,7 +43,6 @@ function solution3(N) {
   while (i < N) {
     if (N % i == 0) {
       return false;
-      break;
     }
     i++;
   }
