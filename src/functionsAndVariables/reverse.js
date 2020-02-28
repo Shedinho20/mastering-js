@@ -11,7 +11,7 @@ function solution1(N) {
   for (let i = N_new.length - 1; i >= 0; i--) {
     Arry.push(N_new[i]);
   }
-  return parseInt(Arry.join(","));
+  return parseInt(Arry.join(""));
 }
 
 /**
@@ -22,16 +22,13 @@ function solution1(N) {
 function solution2(S) {
   //todo: implement solution here
   const S_new = S.split(' ');
-  var lon_Wor
-  for (let i = 0; i<S_new.length-1; i++){
-    if ((S_new[i]).length <= (S_new[i+1]).length){
-      lon_Wor = S_new[1+i];
-    }else{
-      lon_Wor = S_new[i];
-    }
-  }
+  let lon_Wor = "";
+  for (let i = 0; i<S_new.length; i++){
+   if (S_new[i].length > lon_Wor.length){
+     lon_Wor = S_new[i];
+   }
+  } 
 return lon_Wor;
-  
 }
 
 function main() {
