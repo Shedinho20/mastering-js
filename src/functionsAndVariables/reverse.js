@@ -39,9 +39,17 @@ function solution2(S) {
  */
 function solution3(N) {
   //todo: implement solution here
-
-  return false;
+let i = 2;
+while (i<N) {
+  if (N % i == 0){
+    return false;
+    break
+  }
+  i++  
 }
+return true;
+}
+
 
 function main() {
   const N1 = 10293848493;
