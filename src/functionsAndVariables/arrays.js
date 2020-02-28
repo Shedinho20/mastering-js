@@ -6,10 +6,7 @@
 function solution1(A) {
   // todo: implement solution here
   A = A.sort((a, b) => a - b);
-  let A_new = [];
-  A.forEach(function(item) {
-    if (item != A_new[A_new.length - 1]) A_new.push(item);
-  });
+  let A_new = [...new Set(A)];
   return [A_new[2], A_new[A_new.length - 2]];
 }
 
