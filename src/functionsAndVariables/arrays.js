@@ -17,7 +17,25 @@ function solution1(A) {
  */
 function solution2(A) {
   // todo: implement solution here
-  return 0;
+  A = A.sort((a, b) => a - b);
+  let DIC = new Map();
+  let counter = 1;
+  let i = 0;
+  while (i < A.length) {
+    if (A[i] == A[i + 1]) {
+      counter++;
+    } else {
+      DIC.set(A[i], counter);
+      counter = 1;
+    }
+    i++;
+  }
+  let Max_value = 0;
+  for (let [key, value] in DIC) {
+    if (value > Max_value) {
+      Max_value = value;
+    }
+  }
 }
 
 function main() {
@@ -27,7 +45,7 @@ function main() {
     console.error("TASK 1 Wrong Answer: Please implement a correct solution");
   else console.log("TASK 1 Correct, Welldone");
 
-  const A2 = [1, 3, 4, 1, 5, 5, 7, 4, 1, 4, 2, 3, 4, 0, 4, 9, 4, 13, 4, 4];
+  const A2 = [1, 3, 4, 1, 5, 5, 7, 4, 1, 4, 2, 3, 4, 4, 9, 4, 13, 4, 4];
   const y2 = solution2(A2);
   if (y2 !== 4)
     console.error("TASK 2 Wrong Answer: Please implement a correct solution");
