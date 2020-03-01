@@ -31,11 +31,14 @@ function solution2(A) {
     i++;
   }
   let Max_value = 0;
-  for (let [key, value] in DIC) {
-    if (value > Max_value) {
-      Max_value = value;
+  let Max_key = "";
+  for (let V of DIC) {
+    if (V[1] > Max_value) {
+      Max_value = V[1];
+      Max_key = V[0];
     }
   }
+  return Max_key;
 }
 
 function main() {
