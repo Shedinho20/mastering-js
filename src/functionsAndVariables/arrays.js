@@ -38,7 +38,7 @@ function solution2(A) {
       Max_key = key;
     }
   }
-  return Max_key;
+  return parseInt(Max_key);
 }
 
 function main() {
