@@ -32,10 +32,10 @@ function solution2(A) {
   }
   let Max_value = 0;
   let Max_key = "";
-  for (let V of DIC) {
-    if (V[1] > Max_value) {
-      Max_value = V[1];
-      Max_key = V[0];
+  for (let [key, value] of DIC) {
+    if (value > Max_value) {
+      Max_value = value;
+      Max_key = key;
     }
   }
   return Max_key;
