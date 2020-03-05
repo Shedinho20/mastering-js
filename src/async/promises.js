@@ -1,3 +1,6 @@
+const fetch = require("node-fetch").default;
+const posts = require("../../data/posts");
+
 /**
  * TASK 1: Write a function to return a promise that resolves to
  * a list of posts from this URL: https://jsonplaceholder.typicode.com/posts
@@ -10,17 +13,14 @@
  */
 function getPosts(url) {
   //todo: implement solution
-  return fetch(url).then(res => res.json());
+  return Promise.resolve([]);
 }
-
-const posts = require("../../data/posts");
 
 function main() {
   getPosts("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
-    console.log(postsRes);
-    if (postsRes !== posts) {
-      console.log("Wrong Answer: Please implement a correct solution");
-    } else console.log("Correct, Welldone");
+    if (postsRes.toString() === posts.toString())
+      console.log("Correct, Welldone");
+    else console.log("Wrong Answer: Please implement a correct solution");
   });
 }
 
