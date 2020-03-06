@@ -20,11 +20,38 @@ function getPosts(url) {
   });
 }
 
+/**
+ * TASK 2: Implement a function using async/await that works exactly like
+ * the above function
+ */
+
+/**
+ * Returns resolved data ==> packaged in a Promise
+ *
+ * @param {string} url
+ * @returns {Promise}
+ */
+async function getPostsAsync(url) {
+  //todo: implement solution
+
+  const res = await fetch(url);
+  const data = await res.json();
+  return data;
+}
+
 function main() {
   getPosts("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
     if (postsRes.toString() === posts.toString())
-      console.log("Correct, Welldone");
-    else console.log("Wrong Answer: Please implement a correct solution");
+      console.log("TASK 1: Correct, Welldone");
+    else
+      console.log("TASK 1: Wrong Answer: Please implement a correct solution");
+  });
+
+  getPostsAsync("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
+    if (postsRes.toString() === posts.toString())
+      console.log("TASK 2: Correct, Welldone");
+    else
+      console.log("TASK 2: Wrong Answer: Please implement a correct solution");
   });
 }
 
