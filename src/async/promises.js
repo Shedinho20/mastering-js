@@ -13,7 +13,11 @@ const posts = require("../../data/posts");
  */
 function getPosts(url) {
   //todo: implement solution
-  return Promise.resolve([]);
+  return new Promise(resolve => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => resolve(data));
+  });
 }
 
 function main() {
