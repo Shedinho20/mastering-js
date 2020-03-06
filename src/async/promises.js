@@ -33,6 +33,7 @@ function getPosts(url) {
  */
 async function getPostsAsync(url) {
   //todo: implement solution
+
   const res = await fetch(url);
   const data = await res.json();
   return data;
