@@ -39,6 +39,20 @@ async function getPostsAsync(url) {
   return data;
 }
 
+/**
+ * TASK 3: Implement a function to read the file: `read.txt`
+ * in this directory
+ */
+
+/**
+ * Returns the text contained within `read.txt`
+ */
+async function readFile() {
+  //todo: implement solution
+
+  return "";
+}
+
 function main() {
   getPosts("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
     if (postsRes.toString() === posts.toString())
@@ -52,6 +66,13 @@ function main() {
       console.log("TASK 2: Correct, Welldone");
     else
       console.log("TASK 2: Wrong Answer: Please implement a correct solution");
+  });
+
+  readFile().then(fileContent => {
+    if (fileContent === "Hello, World")
+      console.log("TASK 3: Correct, Welldone");
+    else
+      console.log("TASK 3: Wrong Answer: Please implement a correct solution");
   });
 }
 
