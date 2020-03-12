@@ -49,9 +49,18 @@ async function getPostsAsync(url) {
  */
 async function readFile() {
   //todo: implement solution
-
-  return "";
+  const res = await fetch("read.txt");
+  const data = await res.text();
+  return data;
 }
+
+// function readFile() {
+//   return new Promise(resolve => {
+//     fetch("read.txt")
+//       .then(res => res.text())
+//       .then(data => console.log(data));
+//   });
+// }
 
 function main() {
   getPosts("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
