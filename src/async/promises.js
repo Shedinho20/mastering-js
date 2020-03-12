@@ -1,5 +1,6 @@
 const fetch = require("node-fetch").default;
 const posts = require("../../data/posts");
+const fs = require("fs");
 
 /**
  * TASK 1: Write a function to return a promise that resolves to
@@ -48,19 +49,15 @@ async function getPostsAsync(url) {
  * Returns the text contained within `read.txt`
  */
 async function readFile() {
-  //todo: implement solution
-  const res = await fetch("read.txt");
-  const data = await res.text();
-  return data;
+  fs.readFile("read.txt", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      return data;
+    }
+  });
 }
-
-// function readFile() {
-//   return new Promise(resolve => {
-//     fetch("read.txt")
-//       .then(res => res.text())
-//       .then(data => console.log(data));
-//   });
-// }
+//todo: implement solution
 
 function main() {
   getPosts("https://jsonplaceholder.typicode.com/posts").then(postsRes => {
