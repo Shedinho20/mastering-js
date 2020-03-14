@@ -1,6 +1,8 @@
 const fetch = require("node-fetch").default;
 const posts = require("../../data/posts");
 const fs = require("fs");
+const { promisify } = require("util");
+const promiseReadFile = promisify(fs.readFile);
 
 /**
  * TASK 1: Write a function to return a promise that resolves to
@@ -49,13 +51,8 @@ async function getPostsAsync(url) {
  * Returns the text contained within `read.txt`
  */
 async function readFile() {
-  fs.readFile("read.txt", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      return data;
-    }
-  });
+  const res = await promiseReadFile("read.txt", "utf8");
+  console.log(res);
 }
 //todo: implement solution
 
