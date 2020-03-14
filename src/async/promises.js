@@ -53,8 +53,7 @@ async function getPostsAsync(url) {
  */
 
 async function readFile() {
-  const files = path.resolve("src", "async", "read.txt");
-  const res = await promiseReadFile(files, "utf8");
+  const res = await promiseReadFile(path.join(__dirname, "read.txt"), "utf8");
   return res;
 }
 //todo: implement solution
