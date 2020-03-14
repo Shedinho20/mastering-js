@@ -3,6 +3,7 @@ const posts = require("../../data/posts");
 const fs = require("fs");
 const { promisify } = require("util");
 const promiseReadFile = promisify(fs.readFile);
+const path = require("path");
 
 /**
  * TASK 1: Write a function to return a promise that resolves to
@@ -50,9 +51,11 @@ async function getPostsAsync(url) {
 /**
  * Returns the text contained within `read.txt`
  */
+
 async function readFile() {
-  const res = await promiseReadFile("read.txt", "utf8");
-  console.log(res);
+  const files = path.resolve("src", "async", "read.txt");
+  const res = await promiseReadFile(files, "utf8");
+  return res;
 }
 //todo: implement solution
 
